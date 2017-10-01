@@ -3,80 +3,58 @@ body {
     margin: 0;
 }
 div {
-    position: relative;    
-    /*z-index: 2; */
+    display: block;
+    position: static;    
     overflow: hidden;
     background: #111111;
-    padding: 10px;
+    padding: 0px;
 }
 div #gameframe {
-    background: darkgreen;  
-    width: 100%;
+    position: absolute;
     top:  0px;
     bottom: 0px;
+    width: 100%;
+    min-width: 600px;
+    background: pink;  
 }
 div #title {
+    width: 100%;
+    min-width: 600px;
     text-align: center;
     font-size: 2em;
     color: white;
     background: #343550;
 }
-div #level {
+div .status {
+    display: inline-block;
+    height: 2.5em;
+    font-size: 1.25em;    
     padding-left: 1em;
-    padding-right: 2em;
-    font-size: 1.5em;
+    padding-right: 1em;
+    background: darkblue;
+    color: white;
+}
+div #level {
+    float: left;
     text-align: left;
-    background: #3B659B;
 }
 div #player {
     float: left;
-    padding-left: 1em;
-    font-size: 1.5em;
+    width: 45%;
     text-align: center;
-    background: #3B659B;
 }
 div #score {
-    padding-right: 1em;
-    font-size: 1.5em;
+    float: right;
     text-align: right;
-    background: #3B659B;
-}
-div #markee {
-    font-style: italic;
-    font-size: 1.5em;
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    /*
-    -webkit-marquee: right small infinite scroll;
-    overflow-x:-webkit-marquee;
-
-    -webkit-marquee-direction: right;
-    -webkit-marquee-style: scroll;
-    -webkit-marquee-speed: normal;
-    -webkit-marquee-increment: small;
-    -webkit-marquee-repetition: infinite;
-    */
-    animation-name: marquee;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-@keyframes marquee {
-    from {
-        left: 100%;
-    }
-    to {
-        left: -200%;
-    }
 }
 
 div #arena {
-	width: 350px;
-    height:  500px;   
-    /*z-index: 1; */
-    background: black;
+    position: absolute;
+    top: 5em; /* title + score text box height */
+    bottom: 3.5em; /* marque height */
+    width: 100%;
+    min-width: 600px;
+    background: blue;
 }
 
 div.balloon {
@@ -113,4 +91,24 @@ div.blue {
     background: radial-gradient(100px at 40px 40px, white, blue 60%);
     top: 200px;
     left: 200px;
+}
+
+div #markee {
+    position: absolute;
+    bottom: 0px;
+    font-style: italic;
+    font-size: 1.25em;
+    width: 100%;
+    height: 3em;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes marquee {
+    from {
+        left: 100%;
+    }
+    to {
+        left: -200%;
+    }
 }

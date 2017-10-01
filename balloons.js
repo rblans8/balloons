@@ -19,10 +19,10 @@ function initArenaSize() {
 
    // gameframe.width = window.innerWidth; // + "px";
   //  gameframe.height = window.innerHeight; // + "px";
-    arena.height = window.innerHeight - (title.clientHeight + player.clientHeight + markee.clientHeight) + "px";
-    arena.width = window.innerWidth;
+    //arena.height = window.innerHeight - (title.clientHeight + player.clientHeight + markee.clientHeight) + "px";
+    //arena.width = window.innerWidth;
 
-    console.log(arena.height, window.innerHeight);
+    console.log(arena.clientHeight, window.innerHeight);
     balloonSize = parseInt(balloons[0].clientHeight);
     topPosition = parseInt(arena.clientTop) - balloonSize;
     bottomPosition = parseInt(arena.clientHeight) + balloonSize;
@@ -153,7 +153,7 @@ function gameLoop() {
 }
 
 function start() {
-    alert("BALLOONS!  Level: " + level + "!");    
+//    alert("BALLOONS!  Level: " + level + "!");    
     init();
     gameLoop();
 }
